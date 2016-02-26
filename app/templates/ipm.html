@@ -1,0 +1,73 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block head %}
+    <style>
+        div.background {
+            background-color: #f5f5f5;
+        }
+
+        div.sidebar {
+            border-right: thin solid #000000;
+            padding: 1.5em;
+        }
+
+        div.messages {
+            padding: 1em;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span4 sidebar">
+                <h3>
+                    This interactive demo show cases Twilio's IP Messaging
+                    product.
+                </h3>
+
+                <p>
+                    This is an example of a chat client that can be embedded in
+                    whatever CRM or customer support software you use. It
+                    allows
+                    your agents to talk to your customers over SMS.
+                </p>
+                <a href="/ipm_channel_delete_all">
+                    <button class="btn btn-danger" id="delete-all">Delete All
+                        Channels
+                    </button>
+                </a>
+            </div>
+            <br>
+
+            <div class="span8">
+                <div class="row-fluid">
+                    <h3>Text {{ ipm_number }} to interact with this chat
+                        client</h3>
+                </div>
+                <div class="row-fluid background">
+                    <div class="span3">
+                        <table class="table" id="channels">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="span9">
+                        <div class='row-fluid messages' id="messages"></div>
+
+                        <div class='row-fluid messages'>
+                            <input id="chat-input" type="text"
+                                   class="input-block-level"
+                                   placeholder="type something!" autofocus/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//media.twiliocdn.com/sdk/rtc/js/ip-messaging/v0.9/twilio-ip-messaging.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/static/js/ipm.js"></script>
+{% endblock %}

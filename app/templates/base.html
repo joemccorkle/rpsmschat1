@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="A simple SMS to IP Messaging Demo for Dell">
+    <meta name="author" content="Peter Tan, Twilio Sales Engineering">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Twilio Demo</title>
+    {% endif %}
+
+    <!-- Le styles -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}"
+          rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/bootstrap-responsive.css') }}"
+          rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/bootstrap-selectize.css') }}"
+          rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/docs.css') }}"
+          rel="stylesheet" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"
+          rel="stylesheet">
+    <link href="{{ url_for('static', filename='ico/favicon.ico') }}"
+          rel="shortcut icon" type="image/png">
+
+    <!-- Le javascripts -->
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.role.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+<!-- Navbar =================================================== -->
+<div class="navbar navbar-inverse navbar-top navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav product-nav">
+                <li>
+                    <a class="dropdown-toggle" href="{{ url_for('ipm') }}">
+                        <img class="logo"
+                             src="{{ url_for('static', filename='img/logo.png') }}"/>
+                    </a>
+                </li>
+                <li class>
+                    <a href="{{ url_for('ipm') }}">SMS to IP Messaging Chat</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Subhead ================================================== -->
+{% if index != "True" %}
+    <header id="overview" class="jumbotron subhead">
+        <div class="container">
+            <h1 align="center">Twilio Demo</h1>
+
+            <p class="lead" align="center">
+                A Twilio SMS to IP Messaging Demo
+            </p>
+        </div>
+    </header>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+<!-- Le javascript
+=============================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static', filename='js/bootstrap-transition.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-alert.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-modal.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-dropdown.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-scrollspy.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-tab.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-tooltip.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-popover.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-button.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-collapse.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-carousel.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-typeahead.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-affix.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-spotlight.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-selectize.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/holder/holder.js') }}"></script>
+<script src="{{ url_for('static', filename='js/google-code-prettify/prettify.js') }}"></script>
+
+</body>
+</html>

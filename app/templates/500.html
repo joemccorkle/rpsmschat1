@@ -1,0 +1,9 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	<h1 align="center">An unexpected error has occurred</h1>
+	<p align="center">The administrator has been notified. We apologize for the
+		inconvenience!</p>
+	<p align="center"><a href="{{url_for('index')}}">Click here to go back</a></p>
+{% endblock %}
