@@ -27,11 +27,13 @@ TWILIO_API_KEY = os.environ['TWILIO_API_KEY']
 TWILIO_API_SECRET = os.environ['TWILIO_API_SECRET']
 TWILIO_IPM_SERVICE_SID = os.environ['TWILIO_IPM_SERVICE_SID']
 
-# Heroku Postgres DB
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-
-# Local SQLlite DB
-# basedir = os.path.abspath(os.path.dirname(__file__))
-# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
-# SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-# SQLALCHEMY_TRACK_MODIFICATIONS = False
+DEV_FLAG = os.environ['DEV_FLAG']
+if DEV_FLAG == 'True':
+    # Local SQLlite DB
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+else:
+    # Heroku Postgres DB
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    SQLALCHEMY_TRACK_MODIFICATIONS = False

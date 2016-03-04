@@ -7,9 +7,9 @@
           content="A simple SMS to IP Messaging Demo for Dell">
     <meta name="author" content="Peter Tan, Twilio Sales Engineering">
     {% if title %}
-        <title>{{ title }}</title>
+    <title>{{ title }}</title>
     {% else %}
-        <title>Twilio Demo</title>
+    <title>Twilio Demo</title>
     {% endif %}
 
     <!-- Le styles -->
@@ -56,15 +56,24 @@
 </div>
 <!-- Subhead ================================================== -->
 {% if index != "True" %}
-    <header id="overview" class="jumbotron subhead">
-        <div class="container">
-            <h1 align="center">Twilio Demo</h1>
+<header id="overview" class="jumbotron subhead">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span4">
+                <img class="img" style="max-height: 120px;" align="right"
+                     src="{{ url_for('static', filename='img/Dell_Logo.svg.png') }}"/>
+            </div>
+            <div class="span8">
+                <h1 align="left">Twilio Demo</h1>
 
-            <p class="lead" align="center">
-                A Twilio SMS to IP Messaging Demo
-            </p>
+                <p class="lead" align="left">
+                    A Twilio SMS to IP Messaging Demo
+                </p>
+            </div>
         </div>
-    </header>
+
+    </div>
+</header>
 {% endif %}
 
 {% block content %}{% endblock %}
